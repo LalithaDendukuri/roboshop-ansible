@@ -12,7 +12,7 @@
           src: roboshop.conf
           dest: /etc/nginx/default.d/roboshop.conf
 
-      - name: Remove directory
+      - name: clean old content
         ansible.builtin.file:
           path: /usr/share/nginx/html/*
           state: absent
