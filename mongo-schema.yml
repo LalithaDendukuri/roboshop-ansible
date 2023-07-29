@@ -12,6 +12,6 @@
     state: installed
 
 - name: load schema
-  ansible.builtin.shell: mongo --host mongodb-dev.dljrobo.online </app/schema/${component}.js
+  ansible.builtin.shell: mongo --host mongodb-dev.dljrobo.online </app/schema/{{ component }}.js
 
 
