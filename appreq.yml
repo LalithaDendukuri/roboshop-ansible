@@ -12,11 +12,6 @@
     path: /app
     state: directory
 
-- name: copy mongodb yum repo file
-  ansible.builtin.copy:
-    src: mongo.repo
-    dest: /etc/yum.repos.d/mongo.repo
-
 - name: Download and extract application content
   ansible.builtin.unarchive:
     src: https://roboshop-artifacts.s3.amazonaws.com/{{ component }}.zip
