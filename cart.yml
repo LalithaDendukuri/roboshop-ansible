@@ -2,7 +2,7 @@
   hosts: all
   become: true
   vars:
-    component: user
+    component: cart
 
   tasks:
     - name: install nodejs
