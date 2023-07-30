@@ -1,6 +1,8 @@
 - name: setup dispatch service
   hosts: all
   become: true
+  vars:
+    component: true
   tasks:
     - name: install golang
       ansible.builtin.yum:
