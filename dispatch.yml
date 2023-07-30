@@ -13,7 +13,13 @@
       ansible.builtin.import_tasks: appreq.yml
 
     - name: install the dependencies
-      ansible.builtin.shell: go mod init dispatch ;  go get ;  go build
+      ansible.builtin.shell: go mod init dispatch
+
+    - name: install the dependencies
+      ansible.builtin.shell: go get
+
+    - name: install the dependencies
+      ansible.builtin.shell: go build
 
     - name: app prerequistie
       ansible.builtin.import_tasks: systemd.yml
