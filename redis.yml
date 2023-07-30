@@ -13,7 +13,7 @@
       ansible.builtin.yum:
         name: redis
         state: installed
-        enabled: true
+
 
     - name: update listener address in mongodb configuration
       ansible.builtin.replace:
