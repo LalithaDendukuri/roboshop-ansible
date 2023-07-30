@@ -7,7 +7,7 @@
             name: nginx
             state: latest
 
-      - name: copy roboshop file
+      - name: copy roboshop configuration
         ansible.builtin.copy:
           src: roboshop.conf
           dest: /etc/nginx/default.d/roboshop.conf
