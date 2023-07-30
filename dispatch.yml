@@ -2,7 +2,7 @@
   hosts: all
   become: true
   vars:
-    component: true
+    component: dispatch
   tasks:
     - name: install golang
       ansible.builtin.yum:
