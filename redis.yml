@@ -2,6 +2,9 @@
   hosts: all
   become: true
   tasks:
+    - name: reset module
+      ansible.builtin.shell: yum module reset redis:remi-6.2 -y
+
     - name: install redis repo rpm
       ansible.builtin.yum:
         name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
