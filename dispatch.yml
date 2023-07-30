@@ -1,0 +1,17 @@
+- name: setup dispatch service
+  hosts: all
+  become: true
+  tasks:
+    - name: install golang
+      ansible.builtin.yum:
+        name: golang
+        state: installed
+
+    - name: app prerequistie
+      ansible.builtin.import_tasks: appreq.yml
+
+    - name: install the dependencies
+      ansible.builtin.shell: go mod init dispatch ;  go get ;  go build
+
+    - name: app prerequistie
+      ansible.builtin.import_tasks: systemd.yml

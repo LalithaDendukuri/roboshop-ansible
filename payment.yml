@@ -1,0 +1,6 @@
+- name: payment service
+  hosts: all
+  become: true
+  tasks:
+    - name: install python
+      ansible.builtin.import_tasks: python.yml
