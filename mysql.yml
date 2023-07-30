@@ -2,13 +2,15 @@
   hosts: all
   become: true
   tasks:
-    - name: disable default mysql server
-      ansible.builtin.shell: yum module disable mysql -y
-
-    - name : configure mysql repo file
+    - name: configure mysql repo file
       ansible.builtin.copy:
         src: mysql.repo
         dest: /etc/yum.repos.d/mysql.repo
+
+
+    - name: disable default mysql server
+      ansible.builtin.shell: yum module disable mysql -y
+
 
     - name: install mysql server
       ansible.builtin.yum:
