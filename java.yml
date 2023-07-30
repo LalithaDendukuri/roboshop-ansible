@@ -4,7 +4,7 @@
     state: installed
 
 - name: App Pre-requisites
-  ansible.builtin.import_tasks: app-preq.yml
+  ansible.builtin.import_tasks: appreq.yml
 
 - name: Download Maven Dependencies
   ansible.builtin.shell: mvn clean package ; mv target/{{component}}-1.0.jar {{component}}.jar
@@ -16,5 +16,5 @@
   when: schema is defined
 
 - name: SystemD Setup
-  ansible.builtin.import_tasks: systemd-setup.yml
+  ansible.builtin.import_tasks: systemd.yml
 
