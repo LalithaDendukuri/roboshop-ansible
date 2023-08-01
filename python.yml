@@ -7,7 +7,7 @@
     state: installed
 
 - name: App Pre-requisites
-  ansible.builtin.import_tasks: app-preq.yml
+  ansible.builtin.import_tasks: appreq.yml
 
 - name: Download Python Dependencies
   ansible.builtin.shell: pip3.6 install -r requirements.txt
@@ -15,5 +15,5 @@
     chdir: /app
 
 - name: SystemD Setup
-  ansible.builtin.import_tasks: systemd-setup.yml
+  ansible.builtin.import_tasks: systemd.yml
 
